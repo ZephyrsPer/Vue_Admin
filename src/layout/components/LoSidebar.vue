@@ -20,15 +20,16 @@
         <el-icon :class="['iconfont', 'icon-jiesuo']"></el-icon>
         <span class="menu-name">Vistor</span>
       </el-menu-item>
-      <el-sub-menu>
+      <el-sub-menu index="/user_control">
         <template #title>
           <el-icon class="iconfont icon-yonghu">
           </el-icon>
           <span>用户控制</span>
         </template>
         <el-menu-item index="/user_control">
-          <el-icon :class="['iconfont', 'icon-jiesuo']"></el-icon>
-          <span class="menu-name">Vistor</span>
+          <el-icon></el-icon>
+          <!-- <i></i> -->
+          <span class="menu-name">管理界面</span>
         </el-menu-item>
       </el-sub-menu>
     </el-menu>
@@ -54,9 +55,9 @@ const defaultActive = computed(() => {
 
 <style lang="less" scoped>
 .is-active {
-  background-color: rgb(146, 207, 118);
+  // background-color: rgb(146, 207, 118);
   color: rgb(201, 108, 46);
-  border-radius: 10px;
+  // border-radius: 10px;
 }
 
 .title {

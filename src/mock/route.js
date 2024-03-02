@@ -13,6 +13,10 @@ const routes = [
                 path: "dashboard",
                 component: "dashboard",
             },
+            {
+                path: "user_control",
+                component: "UserControl",
+            }
         ]
     },
 ]

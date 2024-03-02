@@ -1,11 +1,15 @@
 <template>
-  <div class="main" id="main">
+  <!-- 标签式导航 -->
+  <TagsView></TagsView>
+  <div class="main">
     <!-- <el-button type="primary" @click="themeStore.changeIsCollapsed">测试按钮</el-button> -->
     <router-view></router-view>
   </div>
 </template>
 
 <script setup lang="ts">
+import TagsView from "@/components/TagsView/index.vue"
+
 // import useThemeStore from "@/store/theme";
 
 // import { storeToRefs } from 'pinia'
