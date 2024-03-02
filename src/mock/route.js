@@ -1,8 +1,3 @@
-
-
-// 模拟路由表数据
-
-
 // 通用路由，登录后就发送了
 const routes = [
     {
@@ -11,11 +6,19 @@ const routes = [
         children: [
             {
                 path: "dashboard",
+                name: "控制面板",
                 component: "dashboard",
+                meta: {
+                    title: "控制面板"
+                }
             },
             {
                 path: "user_control",
+                name: "用户控制",
                 component: "UserControl",
+                meta: {
+                    title: "用户控制"
+                }
             }
         ]
     },
@@ -28,8 +31,12 @@ const adminRoutes = [
         component: "layout",
         children: [
             {
-                path: 'power_admin',      
+                path: 'power_admin',
+                name: "管理员权限",
                 component: "Admin",
+                meta: {
+                    title: "管理员权限"
+                }
             },
         ]
     },
@@ -42,13 +49,18 @@ const vistorRoutes = [
         component: "layout",
         children: [
             {
-                path: 'power_vistor',      
+                path: 'power_vistor',
+                name: "游客权限",
                 component: "Vistor",
+                meta: {
+                    title: "游客权限"
+                }
             },
         ]
     },
     ...routes
 ]
+
 
 
 
