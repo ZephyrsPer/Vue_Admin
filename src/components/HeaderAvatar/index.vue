@@ -1,7 +1,9 @@
 <template>
     <div class="header-avatar">
         <el-dropdown class="custom-dropdown">
-            <span class="avatar-text">用户名称</span> <!-- 修改为显示用户名称 -->
+            <el-avatar :size="32" src="https://empty" @error="errorHandler">
+                <img src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png" />
+            </el-avatar>
             <template #dropdown>
                 <el-dropdown-menu>
                     <el-dropdown-item @click="logout">退出登录</el-dropdown-item>
@@ -10,11 +12,12 @@
         </el-dropdown>
     </div>
 </template>
-   
+
 <script setup lang="ts">
 import useUserStore from '@/store/user';
 import { useRouter } from 'vue-router';
 
+const errorHandler = () => true
 const authStore = useUserStore();
 const router = useRouter();
 
@@ -23,7 +26,7 @@ const logout = () => {
     router.replace('/login'); // 在这里设置你想要跳转的登录页面路径
 }
 </script>
-  
+
 <style lang="less" scoped>
 .header-avatar {
     height: 100%;
@@ -31,9 +34,9 @@ const logout = () => {
     align-items: center;
     justify-content: center;
 
-    &:hover {
-        background-color: rgb(235, 235, 232);
-    }
+    // &:hover {
+    //     // background-color: rgb(235, 235, 232);
+    // }
 
     // background-color: #1890ff;
     .custom-dropdown {
@@ -59,4 +62,3 @@ const logout = () => {
     }
 }
 </style>
-  
