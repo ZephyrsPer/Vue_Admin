@@ -20,10 +20,17 @@
         <el-icon :class="['iconfont', 'icon-jiesuo']"></el-icon>
         <span class="menu-name">Vistor</span>
       </el-menu-item>
-      <el-menu-item index="/power_vistor" v-if="useUserStore().token == 'vistor-token'">
-        <el-icon :class="['iconfont', 'icon-jiesuo']"></el-icon>
-        <span class="menu-name">Vistor</span>
-      </el-menu-item>
+      <el-sub-menu>
+        <template #title>
+          <el-icon class="iconfont icon-yonghu">
+          </el-icon>
+          <span>用户控制</span>
+        </template>
+        <el-menu-item index="/user_control">
+          <el-icon :class="['iconfont', 'icon-jiesuo']"></el-icon>
+          <span class="menu-name">Vistor</span>
+        </el-menu-item>
+      </el-sub-menu>
     </el-menu>
   </div>
 </template>
