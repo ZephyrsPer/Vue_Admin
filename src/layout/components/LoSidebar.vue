@@ -20,6 +20,10 @@
         <el-icon :class="['iconfont', 'icon-jiesuo']"></el-icon>
         <span class="menu-name">Vistor</span>
       </el-menu-item>
+      <el-menu-item index="/power_vistor" v-if="useUserStore().token == 'vistor-token'">
+        <el-icon :class="['iconfont', 'icon-jiesuo']"></el-icon>
+        <span class="menu-name">Vistor</span>
+      </el-menu-item>
     </el-menu>
   </div>
 </template>
