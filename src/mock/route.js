@@ -19,7 +19,32 @@ const routes = [
                 meta: {
                     title: "用户控制"
                 }
-            }
+            },
+            {
+                path: "markdown",
+                name: "MarkDown",
+                component: "MarkDown",
+                meta: {
+                    title: "MarkDown"
+                }
+            },
+            {
+                path: "charts_bar",
+                name: "bar",
+                component: "bar",
+                meta: {
+                    title: "bar"
+                }
+            },
+            {
+                path: "charts_line",
+                name: "line",
+                component: "line",
+                meta: {
+                    title: "line"
+                }
+            },
+
         ]
     },
 ]

@@ -7,9 +7,13 @@ import "./style.css"
 import pinia from "./store";
 import router from './router';
 
-import './permission' 
+import './permission'
+
+
+
 
 const app = createApp(App)
 app.use(pinia)
 app.use(router)
+
 app.mount('#app')

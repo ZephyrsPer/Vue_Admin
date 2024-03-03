@@ -32,6 +32,27 @@
           <span class="menu-name">管理界面</span>
         </el-menu-item>
       </el-sub-menu>
+      <el-menu-item index="/markdown">
+        <el-icon :class="['iconfont', 'icon-fuwenbenbianjiqi_ziti']"></el-icon>
+        <span class="menu-name">MarkDown</span>
+      </el-menu-item>
+
+      <el-sub-menu index="/charts">
+
+        <template #title>
+          <el-icon class="iconfont icon-tubiao">
+          </el-icon>
+          <span>图表</span>
+        </template>
+        <el-menu-item index="/charts_bar">
+          <el-icon class="iconfont icon-tubiao-zhuzhuangtu"></el-icon>
+          <span class="menu-name">柱状图</span>
+        </el-menu-item>
+        <el-menu-item index="/charts_line">
+          <el-icon class="iconfont icon-tubiao-zhexiantu"></el-icon>
+          <span class="menu-name">折线图</span>
+        </el-menu-item>
+      </el-sub-menu>
     </el-menu>
   </div>
 </template>

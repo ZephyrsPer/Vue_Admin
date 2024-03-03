@@ -29,6 +29,9 @@ export default defineConfig(() => {
         '@': resolve(__dirname, 'src'),
       },
     },
+    optimizeDeps: {
+      exclude: ['tinymce/plugins/contextmenu', 'tinymce/plugins/colorpicker'],
+    },
     // server: {
     //   port: 9999,
     //   proxy: {
