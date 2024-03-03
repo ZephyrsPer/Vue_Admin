@@ -1,0 +1,50 @@
+name: Generate site and deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      # 检出仓库
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # 设置 Node.js 环境
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # 安装依赖
+      - name: Install dependencies
+        run: |
+          npm install
+
+      # 构建 Vue 应用
+      - name: Build Vue app
+        run: |
+          npm run build
+
+      # 部署网站
+      - name: Deploy site
+        env:
+          GITHUB_REPO: github.com/ZephyrsPer/ZephyrsPer.github.io
+        run: |
+          cd ./dist
+          # 创建 CNAME 文件（如果需要）
+          # echo "zephyrs.site" > CNAME
+          git init -b main
+          git add .
+          git config --global user.email "ZephyrsPer@example.com"
+          git config --global user.name "ZephyrsPer"
+          git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
+          # 强制推送到远程仓库的 'blog' 分支
+          git push --force --quiet "https://${{secrets.DEPLOY}}@$GITHUB_REPO" main:Vue_Admin
